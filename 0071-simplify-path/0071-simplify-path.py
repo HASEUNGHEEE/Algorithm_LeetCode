@@ -19,8 +19,22 @@ class Solution:
 
         output = "/".join(st)
         return "/" + output
+
+        """
+        같은 로직, 간결한 코드
+        dirs = [i for i in path.split("/") if i]
+        st = []
+
+        for di in dirs:
+            if st and di == "..": st.pop()
+            elif di not in [".", ".."]: st.append(di)
+        
+        return "/" + "/".join(st)
+        """
+
     
         """
+        [first try]
         wrong answer - pattern 처리로 생각할 문제 X
         dirs = path.split('/')
         output = ""
